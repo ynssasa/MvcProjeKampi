@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<br />
+<h2>-İstatistik Sayfası-</h2>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" style="background-color:aqua; height:150px; margin:2px 3px; text-align:center; padding:50px 5px; font-size:large;">
+            <p style="text-align:start;">Toplam Kategori Sayısı:</p>
+            <p style="text-align:center; font-size:larger; padding:5px 0px;"><b>@ViewBag.query1</b></p>
+        </div>
+        <div class="col-md-3" style="background-color:aquamarine; height:150px; margin:2px 3px;  text-align:center; padding:50px 5px; font-size:large;">
+            <p style="text-align:start;">Yazılıma Ait Başlık Sayısı:</p>
+            <p style="text-align:center; font-size:larger; padding:5px 0px;"><b>@ViewBag.query2</b></p>
+        </div>
+
+        <div class="col-md-3" style="background-color:bisque; height:150px; margin:2px 3px; text-align:center; padding:50px 5px; font-size:large; ">
+            <p style="text-align:start;">Adında A Harfi Geçen Yazar Sayısı:</p>
+            <p style="text-align:center; font-size:larger; padding:0px;"><b>@ViewBag.query3</b></p>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-3" style="background-color:hotpink; height:170px; margin:2px 3px; text-align:center; padding:50px 5px; font-size:large;">
+            <p style="text-align:start;">En Fazla Başlığa Sahip Kategori:</p>
+            <p style="text-align:center; font-size:larger; padding:5px 0px;"><b>@ViewBag.query4</b></p>
+        </div>
+        <div class="col-md-3" style="background-color:cornflowerblue; height:170px; margin:2px 3px;  text-align:center; padding:50px 5px; font-size:large;">
+            <p style="text-align:start;">Kategorilerde Aktif Pasif Farkı:</p>
+            <p style="text-align:center; font-size:larger; padding:5px 0px;"><b>@ViewBag.query5</b></p>
+        </div>
+
+    </div>
+</div>
