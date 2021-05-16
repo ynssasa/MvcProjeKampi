@@ -1,3 +1,3 @@
 # MvcProjeKampi
 ## Sözlük Uygulaması
-*Bu proje Murat Yüzedağın MvcSözlükProjesi ile paralel olarak hazırlanmıştır.*
+*Bu proje Murat Yücedağın MvcSözlükProjesi ile paralel olarak hazırlanmıştır.*
