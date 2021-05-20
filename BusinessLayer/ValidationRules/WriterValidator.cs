@@ -18,12 +18,12 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.WriterTitle).NotEmpty().WithMessage("Ünvan boş geçilemez.");
             RuleFor(x => x.WriterSurName).MinimumLength(3).WithMessage("Lütfen en az 3 karakter girişi yapınız.");
             RuleFor(x => x.WriterSurName).MaximumLength(20).WithMessage("Lütfen en fazla 20 karakter girişi yapınız.");
-            RuleFor(x => x.WriterAbout).Must(IsAboutValid).WithMessage("Hakkında kısmında en az bir a harfi bulunmalıdır.");
+            RuleFor(x => x.WriterAbout).Must(IsAboutValid).WithMessage("Hakkında kısmında en az bir A harfi bulunmalıdır.");
         }
 
         private bool IsAboutValid(string arg)
         {
-            var IsTrue = arg.Contains("a");
+            var IsTrue = arg.ToUpper().Contains("A");
             if(IsTrue)
             {
                 return true;
