@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-@{ string color = "";}
+@{ string color = ""; string headingStatus = ""; string statusColor = "";}
 <!DOCTYPE html>
 <html>
 
@@ -43,8 +43,11 @@
                             <th style="width: 20%">
                                 Başlık Adı
                             </th>
-                            <th style="width: 30%">
+                            <th style="width: 15%">
                                 Oluşturan Yazar
+                            </th>
+                            <th style="width: 10%">
+                                Durum
                             </th>
                             <th style="width: 8%" class="text-center">
                                 Kategori
@@ -76,6 +79,17 @@
                             {
                                 color = "badge badge-primary";
                             }
+
+                            if (item.HeadingStatus == true)
+                            {
+                                headingStatus = "Pasif Yap";
+                                statusColor = "badge badge-primary";
+                            }
+                            else
+                            {
+                                headingStatus = "Aktif Yap";
+                                statusColor = "badge badge-danger";
+                            }
                             <tr>
                                 <td>
                                     @item.HeadingId
@@ -96,6 +110,9 @@
                                         </li>
                                     </ul>
                                 </td>
+                                <td>
+                                    <p class="@statusColor">@item.HeadingStatus</p>
+                                </td>
                                 <td class="project-state">
                                     <span class="@color">@item.Category.CategoryName</span>
                                 </td>
@@ -110,10 +127,10 @@
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
+                                    <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
                                         <i class="fas fa-trash">
                                         </i>
-                                        Sil
+                                        @headingStatus
                                     </a>
                                 </td>
                             </tr>
